@@ -1,5 +1,5 @@
  
-# Fibonacci Twelve Days of Christmas CLI tool in Rust
+# Twelve Days of Christmas CLI tool in Rust
 Done as part of practicing the [3.5 Control Flow section of the official Rust documentation](https://doc.rust-lang.org/book/ch03-05-control-flow.html) which has users to try to build certain programs to practice what they learned.
 
 This program can be used via CLI. It prints the full lyrics of "A Song And A Christmas Tree (The Twelve Days of Christmas) by Andy Williams" taking advantage of the lyrical repetitions in the song.
