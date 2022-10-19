@@ -1,6 +1,22 @@
 use ordinal::Ordinal;
 
 fn main() {
+    //unique lyrics in order
+    let lyrics: [&str; 12] = [
+        "A song and a Christmas tree \n",
+        "Two candy canes",
+        "Three boughs of holly",
+        "Four colored lights",
+        "A shining star",
+        "Little silver bells",
+        "Candles a-glowing",
+        "Gold and silver tinsel",
+        "A guardian angel",
+        "Some mistletoe",
+        "Gifts for one and all",
+        "All their good wishes",
+    ];
+
     for x in 1..=12 {
         let ordinal: String = Ordinal(x).to_string();
 
@@ -8,54 +24,16 @@ fn main() {
 
         println!("My good friends brought to me");
 
-        if x > 11 {
-            println!("All their good wishes");
+        for i in (1..=x).rev() {
+            let mut verse: String = String::from(lyrics[i-1]);
+
+            //refactor last passage so it becocomes "And a song and a Christmas tree"
+            //instead of just "A song and a Christmas tree" starting with the second verse
+            if (x > 1) & (verse == lyrics[0]) {
+                verse = String::from("And ") + &verse.replace("A", "a");
+            }
+
+            println!("{verse}");
         }
-
-        if x > 10 {
-            println!("Gifts for one and all");
-        }
-
-        if x > 9 {
-            println!("Some mistletoe");
-        }
-
-        if x > 8 {
-            println!("A guardian angel");
-        }
-
-        if x > 7 {
-            println!("Gold and silver tinsel");
-        }
-
-        if x > 6 {
-            println!("Candles a-glowing");
-        }
-
-        if x > 5 {
-            println!("Little silver bells");
-        }
-
-        if x > 4 {
-            println!("A shining star");
-        }
-
-        if x > 3 {
-            println!("Four colored lights");
-        }        
-
-        if x > 2 {
-            println!("Three boughs of holly");
-        }
-
-        let mut ending_verse: String = String::from("A song and a Christmas tree");
-
-        if x > 1 {
-            println!("Two candy canes");
-
-            ending_verse = String::from("And ") + &ending_verse.replace("A", "a");
-        }
-
-        println!("{ending_verse} \n");
     }
 }
